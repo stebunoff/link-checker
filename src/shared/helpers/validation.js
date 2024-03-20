@@ -1,3 +1,12 @@
+const VALID_STATUS_CODE = 200;
+export const checkStatusCode = (statusCode) => {
+  if (statusCode === VALID_STATUS_CODE) {
+    return true;
+  } else {
+    throw new Error(`Invalid status code. Expected ${VALID_STATUS_CODE}, but received ${statusCode}.`);
+  }
+};
+
 export const validateURL = (url) => {
   const pattern = new RegExp(
     '^(https?:\\/\\/)?' + // protocol
@@ -8,5 +17,9 @@ export const validateURL = (url) => {
       '(\\#[-a-z\\d_]*)?$', // fragment locator
     'i'
   );
-  return pattern.test(url);
+  if (pattern.test(url)) {
+    return true;
+  } else {
+    throw new Error(`Invalid url: ${url}`);
+  }
 }
