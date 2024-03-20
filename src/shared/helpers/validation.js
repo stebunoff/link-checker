@@ -3,7 +3,8 @@ export const checkStatusCode = (statusCode) => {
   if (statusCode === VALID_STATUS_CODE) {
     return true;
   } else {
-    throw new Error(`Invalid status code. Expected ${VALID_STATUS_CODE}, but received ${statusCode}.`);
+    throw new Error(`Invalid status code.
+    Expected ${VALID_STATUS_CODE}, but received ${statusCode}.`);
   }
 };
 
@@ -22,4 +23,4 @@ export const validateURL = (url) => {
   } else {
     throw new Error(`Invalid url: ${url}`);
   }
-}
+};
