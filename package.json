@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "start": "node src/main.js"
+    "start": "node --env-file=.env src/main.js"
   },
   "devDependencies": {
     "eslint": "8.56.0",
